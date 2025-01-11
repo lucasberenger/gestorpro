@@ -4,7 +4,7 @@
 
 ## Sobre o Projeto
 
-GestorPRO é uma aplicação mobile que simplifica a gestão financeira empresarial através de dashboards intuitivos e alertas automáticos via WhatsApp.
+GestorPRO é uma aplicação web (futuramente mobile também!) que simplifica a gestão financeira empresarial através de dashboards intuitivos e alertas automáticos via WhatsApp.
 
 ### Funcionalidades Principais
 
@@ -15,17 +15,24 @@ GestorPRO é uma aplicação mobile que simplifica a gestão financeira empresar
 
 ### Stack Tecnológica
 
-**Mobile (Frontend)**
-- React Native + Expo
-- React Native Paper
-- Victory Native (gráficos)
-- AsyncStorage
+**Frontend**
+- React.js
+- Tailwind CSS
+- Shadcn/ui (componentes)
+- Recharts (gráficos)
+- React Query (gerenciamento de estado)
+
 
 **Backend**
 - Java + Spring Boot
 - MySQL
 - Twilio API (WhatsApp)
 - JWT (autenticação)
+
+**DevOps e Infraestrutura**
+- Docker + Docker-compose (containers)
+- Github Actions (CI/CD)
+- Jest + React Testing Library (testes)
 
 
 ## Documentação
