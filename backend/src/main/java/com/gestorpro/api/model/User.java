@@ -47,6 +47,10 @@ public class User {
     @Column(nullable = false)
     private boolean active = true;
 
+    @OneToOne
+    @JoinColumn(name = "company_id", unique = true, nullable = false)
+    private Company company;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
