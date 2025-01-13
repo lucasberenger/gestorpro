@@ -9,6 +9,6 @@ import java.util.UUID;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, UUID> {
-    Optional<Company> findByCNPJ(String cnpj);
+    Optional<Company> findByCnpj(String cnpj);
     boolean existsByCnpj(String cnpj);
 }
