@@ -9,5 +9,4 @@ public class GestorProApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GestorProApiApplication.class, args);
 	}
-
 }
