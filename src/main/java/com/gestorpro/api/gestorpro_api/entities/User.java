@@ -1,4 +1,4 @@
-package com.gestorpro.api.gestorpro_api.Entities;
+package com.gestorpro.api.gestorpro_api.entities;
 
 
 import jakarta.persistence.*;
