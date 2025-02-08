@@ -1,5 +1,6 @@
 package com.gestorpro.api.gestorpro_api.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public class Company implements Serializable {
     private String cnpj;
 
     @OneToOne(mappedBy = "company")
+    @JsonIgnore
     private User user;
 
     public Company() {
