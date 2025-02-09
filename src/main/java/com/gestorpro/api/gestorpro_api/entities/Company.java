@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_company")
@@ -20,6 +21,9 @@ public class Company implements Serializable {
     @OneToOne(mappedBy = "company")
     @JsonIgnore
     private User user;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Employee> employees;
 
     public Company() {
     }
