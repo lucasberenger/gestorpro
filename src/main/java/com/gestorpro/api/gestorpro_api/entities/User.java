@@ -19,7 +19,7 @@ public class User implements Serializable {
     private String phone;
     private String password;
 
-    @OneToOne
+    @OneToOne()
     @JoinColumn(name = "company_id")
     private Company company;
 
