@@ -19,7 +19,7 @@ public class Company implements Serializable {
     private String name;
     private String cnpj;
 
-    @OneToOne(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "company")
     @JsonIgnore
     private User user;
 
@@ -29,11 +29,12 @@ public class Company implements Serializable {
     public Company() {
     }
 
-    public Company(Long id, String name, String cnpj, User user) {
+    public Company(Long id, String name, String cnpj, User user, Set<Employee> employees) {
         this.id = id;
         this.name = name;
         this.cnpj = cnpj;
         this.user = user;
+        this.employees = employees;
     }
 
     public Long getId() {
@@ -66,5 +67,13 @@ public class Company implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
     }
 }

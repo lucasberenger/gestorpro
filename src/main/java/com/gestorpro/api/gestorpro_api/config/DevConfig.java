@@ -27,7 +27,7 @@ public class DevConfig implements CommandLineRunner {
         User user1 = new User(null, "Maria Brown", "MariaBrown@io.com", "988888888", "123456", null);
         userRepository.save(user1);
 
-        Company comp1 = new Company(null, "Company1", "123456789", user1);
+        Company comp1 = new Company(null, "Company1", "123456789", user1, null);
         companyRepository.save(comp1);
         user1.setCompany(comp1);
         userRepository.save(user1);
