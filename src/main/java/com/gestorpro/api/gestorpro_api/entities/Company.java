@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -18,12 +19,12 @@ public class Company implements Serializable {
     private String name;
     private String cnpj;
 
-    @OneToOne(mappedBy = "company")
+    @OneToOne(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private User user;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Employee> employees;
+    private Set<Employee> employees = new HashSet<>();
 
     public Company() {
     }
