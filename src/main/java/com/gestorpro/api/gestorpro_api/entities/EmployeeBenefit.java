@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 
+@Entity
+@Table(name = "tb_employee_benefit")
 public class EmployeeBenefit implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -19,7 +21,7 @@ public class EmployeeBenefit implements Serializable {
     @Enumerated(EnumType.STRING)
     private Benefit benefit;
 
-    private Double value;
+    private Double benefitValue;
 
     public EmployeeBenefit() {
     }
@@ -28,7 +30,7 @@ public class EmployeeBenefit implements Serializable {
         this.id = id;
         this.employee = employee;
         this.benefit = benefit;
-        this.value = value;
+        this.benefitValue = value;
     }
 
     public Long getId() {
@@ -55,11 +57,11 @@ public class EmployeeBenefit implements Serializable {
         this.benefit = benefit;
     }
 
-    public Double getValue() {
-        return value;
+    public Double getBenefitValue() {
+        return benefitValue;
     }
 
-    public void setValue(Double value) {
-        this.value = value;
+    public void setBenefitValue(Double benefitValue) {
+        this.benefitValue = benefitValue;
     }
 }

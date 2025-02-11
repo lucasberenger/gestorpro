@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -27,12 +28,12 @@ public class Employee implements Serializable {
     private Company company;
 
     @OneToMany(mappedBy = "employee")
-    private Set<EmployeeBenefit> employeeBenefits;
+    private Set<EmployeeBenefit> employeeBenefits = new HashSet<>();
 
     public Employee() {
     }
 
-    public Employee(Long id, String name, String cpf, String phone, String role, Double salary, Company company) {
+    public Employee(Long id, String name, String cpf, String phone, String role, Double salary, Company company, Set<EmployeeBenefit> employeeBenefits) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
@@ -40,6 +41,7 @@ public class Employee implements Serializable {
         this.role = role;
         this.salary = salary;
         this.company = company;
+        this.employeeBenefits = employeeBenefits;
     }
 
     public Long getId() {
@@ -96,5 +98,13 @@ public class Employee implements Serializable {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public Set<EmployeeBenefit> getEmployeeBenefits() {
+        return employeeBenefits;
+    }
+
+    public void setEmployeeBenefits(Set<EmployeeBenefit> employeeBenefits) {
+        this.employeeBenefits = employeeBenefits;
     }
 }
