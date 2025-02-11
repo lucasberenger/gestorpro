@@ -1,5 +1,6 @@
 package com.gestorpro.api.gestorpro_api.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -21,6 +22,7 @@ public class Employee implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
+    @JsonIgnore
     private Company company;
 
     public Employee() {
