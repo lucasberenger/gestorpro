@@ -27,7 +27,7 @@ public class Employee implements Serializable {
     @JsonIgnore
     private Company company;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private Set<EmployeeBenefit> employeeBenefits = new HashSet<>();
 
     public Employee() {

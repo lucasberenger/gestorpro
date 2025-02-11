@@ -1,5 +1,6 @@
 package com.gestorpro.api.gestorpro_api.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gestorpro.api.gestorpro_api.entities.enums.Benefit;
 import jakarta.persistence.*;
 
@@ -16,6 +17,7 @@ public class EmployeeBenefit implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
+    @JsonIgnore
     private Employee employee;
 
     @Enumerated(EnumType.STRING)
