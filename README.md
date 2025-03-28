@@ -24,15 +24,15 @@ GestorPRO é uma aplicação mobile que simplifica a gestão financeira empresar
 
 
 **Backend**
-- Java + Spring Boot
-- MySQL
+- Python + FastAPI
+- PostgreSQL
 - Twilio API (WhatsApp)
-- JWT (autenticação)
+- PyJWT (autenticação)
 
 **DevOps e Infraestrutura**
 - Docker + Docker-compose (containers)
 - Github Actions (CI/CD)
-- JUnit + Mockito (testes)
+- PyUnit (testes)
 - Jest + React Testing Library (testes)
 
 
